@@ -38,10 +38,11 @@
   <button class="btn" onclick="redirectToLang('en')">English</button>
   <button class="btn" onclick="redirectToLang('cn')">中文</button>
 
-  <script>
-    function redirectToLang(lang) {
-      window.location.href = `${window.location.origin}/${lang}`;
-    }
-  </script>
+<script>
+  function redirectToLang(lang) {
+    const basePath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+    window.location.href = `${basePath}/${lang}/`;
+  }
+</script>
 </body>
 </html>
